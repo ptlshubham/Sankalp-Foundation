@@ -1,0 +1,12 @@
+function cyberngoCloseButton()
+{
+	var expiration_date = new Date();
+	var cookie_string = '';
+	expiration_date.setMonth(expiration_date.getMonth() + 1);
+	expiration_date.toUTCString();
+	$.cookie("cyberngo", "cookie policy", { expires: expiration_date , path: '/'});
+
+	const elements = document.getElementsByClassName("cookies-msg");
+	while (elements.length > 0) elements[0].remove();
+}
+
